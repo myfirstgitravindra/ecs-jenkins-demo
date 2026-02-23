@@ -1,7 +1,7 @@
 {
-  "name": "ecs-bluegreen-app",
+  "name": "simple-ecs-app",
   "version": "1.0.0",
-  "description": "ECS Blue/Green Demo App",
+  "description": "Simple app for ECS demo",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
