@@ -1,0 +1,4 @@
+{
+    "logGroupName": "/ecs/bluegreen-app",
+    "retentionInDays": 7
+}

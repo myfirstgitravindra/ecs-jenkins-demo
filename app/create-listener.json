@@ -1,0 +1,11 @@
+{
+    "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-1:528133971227:loadbalancer/app/bluegreen-alb/ed1cab7269a13fa9",
+    "Protocol": "HTTP",
+    "Port": 80,
+    "DefaultActions": [
+        {
+            "Type": "forward",
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:528133971227:targetgroup/bluegreen-tg/c82d4010bea0d882"
+        }
+    ]
+}

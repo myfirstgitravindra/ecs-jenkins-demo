@@ -1,0 +1,12 @@
+{
+    "Name": "bluegreen-tg-2",
+    "Protocol": "HTTP",
+    "Port": 3000,
+    "VpcId": "vpc-0a3a1dbce7e81930f",
+    "TargetType": "ip",
+    "HealthCheckPath": "/health",
+    "HealthCheckIntervalSeconds": 30,
+    "HealthCheckTimeoutSeconds": 5,
+    "HealthyThresholdCount": 2,
+    "UnhealthyThresholdCount": 2
+}

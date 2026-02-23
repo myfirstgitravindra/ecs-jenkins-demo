@@ -1,0 +1,7 @@
+{
+    "Name": "bluegreen-alb",
+    "Subnets": ["subnet-05b70e618c4dba27c", "subnet-048e39d44d94ec2cf"],
+    "SecurityGroups": ["sg-0275521e4927c2478"],
+    "Scheme": "internet-facing",
+    "Type": "application"
+}

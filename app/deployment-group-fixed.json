@@ -1,0 +1,50 @@
+{
+    "applicationName": "bluegreen-app",
+    "deploymentGroupName": "bluegreen-dg",
+    "serviceRoleArn": "arn:aws:iam::528133971227:role/AWSCodeDeployRoleForECS",
+    "deploymentConfigName": "CodeDeployDefault.ECSAllAtOnce",
+    "ecsServices": [
+        {
+            "serviceName": "bluegreen-service",
+            "clusterName": "bluegreen-cluster"
+        }
+    ],
+    "loadBalancerInfo": {
+        "targetGroupPairInfoList": [
+            {
+                "targetGroups": [
+                    {
+                        "arn": "arn:aws:elasticloadbalancing:us-east-1:528133971227:targetgroup/bluegreen-tg/c82d4010bea0d882"
+                    },
+                    {
+                        "arn": "arn:aws:elasticloadbalancing:us-east-1:528133971227:targetgroup/bluegreen-tg-2/af41a9a338628f3d"
+                    }
+                ],
+                "prodTrafficRoute": {
+                    "listenerArns": [
+                        "arn:aws:elasticloadbalancing:us-east-1:528133971227:listener/app/bluegreen-alb/ed1cab7269a13fa9/7393d40793b6c267"
+                    ]
+                },
+                "testTrafficRoute": {
+                    "listenerArns": [
+                        "arn:aws:elasticloadbalancing:us-east-1:528133971227:listener/app/bluegreen-alb/ed1cab7269a13fa9/7393d40793b6c267"
+                    ]
+                }
+            }
+        ]
+    },
+    "blueGreenDeploymentConfiguration": {
+        "terminateBlueInstancesOnDeploymentSuccess": {
+            "action": "TERMINATE",
+            "terminationWaitTimeInMinutes": 5
+        },
+        "deploymentReadyOption": {
+            "actionOnTimeout": "CONTINUE_DEPLOYMENT",
+            "waitTimeInMinutes": 0
+        }
+    },
+    "deploymentStyle": {
+        "deploymentType": "BLUE_GREEN",
+        "deploymentOption": "WITH_TRAFFIC_CONTROL"
+    }
+}
